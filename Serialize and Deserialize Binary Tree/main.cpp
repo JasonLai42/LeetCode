@@ -46,12 +46,7 @@ public:
         }
 
         if(data[index] == '?') {
-            if(data.size() > 2) {
-                return std::make_pair(root, index += 2);
-            }
-            else {
-                return std::make_pair(root, index = data.size());
-            }
+            return std::make_pair(root, index += 2);
         }
 
         root = new TreeNode(values.front());

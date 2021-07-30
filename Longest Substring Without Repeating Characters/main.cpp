@@ -30,13 +30,13 @@ public:
                     last_dup = seen_before[s[i]];
                 }
                 // Restart the current max count from the most recent duplicate
-                curr_max = (i+1) - last_dup;
+                curr_max = i - last_dup;
             }
             
             // If the current max is greater than the final max, set the new final max
             final_max = max(final_max, curr_max);
             // Set the index of where this character was last seen
-            seen_before[s[i]] = i + 1;
+            seen_before[s[i]] = i;
         }
         
         return final_max;
